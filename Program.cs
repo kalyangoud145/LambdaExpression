@@ -5,9 +5,28 @@ namespace LambdaExpression
 {
     class Program
     {
+        /// <summary>
+        /// Defines the entry point of the application.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //declaring list 
+            List<Person> listPersonInCity = new List<Person>();
+            AddPersonInfo(listPersonInCity);
+        }
+        /// <summary>
+        /// Adds the person information to list
+        /// </summary>
+        /// <param name="listPersonInCity">The list person in city.</param>
+        public static void AddPersonInfo(List<Person> listPersonInCity)
+        {
+            listPersonInCity.Add(new Person("123", "goud", "nlg", 21));
+            listPersonInCity.Add(new Person("456", "naidu", "khm", 65));
+            listPersonInCity.Add(new Person("956", "reddy", "hyd", 23));
+            listPersonInCity.Add(new Person("789", "ted", "wng", 70));
+            listPersonInCity.Add(new Person("760", "tony", "wngl", 55));
+            listPersonInCity.Add(new Person("729", "tillu", "khz", 95));
         }
     }
 }
