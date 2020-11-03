@@ -18,6 +18,8 @@ namespace LambdaExpression
             Retrieving_TopTwoRecord_Where_AgeLessThanSixty(listPersonInCity);
             Checking_TeenAge_Person(listPersonInCity);
             Retrive_Average_Age(listPersonInCity);
+            Check_Person_With_Specific_Name_Is_Present(listPersonInCity, "reddy");
+
         }
         /// <summary>
         /// Adds the person information to list
@@ -74,6 +76,23 @@ namespace LambdaExpression
                
             }
             Console.WriteLine("Average of ages is: " +age / listPersonInCity.Count);
+        }
+        /// <summary>
+        /// Check if specific person is present or not
+        /// </summary>
+        /// <param name="listPersonInCity"></param>
+        /// <param name="input"></param>
+        public static void Check_Person_With_Specific_Name_Is_Present(List<Person> listPersonInCity, string input)
+        {
+            foreach (Person person in listPersonInCity.FindAll(e => e.Name == input).ToList())
+            {
+
+                if (person.Name == input)
+                {
+                    Console.WriteLine("Person is present");
+                }
+               
+            }
         }
     }
 }
