@@ -17,6 +17,7 @@ namespace LambdaExpression
             AddPersonInfo(listPersonInCity);
             Retrieving_TopTwoRecord_Where_AgeLessThanSixty(listPersonInCity);
             Checking_TeenAge_Person(listPersonInCity);
+            Retrive_Average_Age(listPersonInCity);
         }
         /// <summary>
         /// Adds the person information to list
@@ -58,6 +59,21 @@ namespace LambdaExpression
             {
                 Console.WriteLine("No teenager found");
             }
+        }
+        /// <summary>
+        /// Method gets average age of the persons in list 
+        /// </summary>
+        /// <param name="listPersonInCity"></param>
+        public static void Retrive_Average_Age(List<Person> listPersonInCity)
+        {
+            double age = 0;
+            foreach (Person person in listPersonInCity.FindAll(e => (e.Age < 100)).ToList())
+            {
+
+                age = age + person.Age;
+               
+            }
+            Console.WriteLine("Average of ages is: " +age / listPersonInCity.Count);
         }
     }
 }
