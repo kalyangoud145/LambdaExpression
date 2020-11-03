@@ -11,7 +11,7 @@ namespace LambdaExpression
         public string Address;
         public int Age;
 
-        public Person(string ssn, string name,string address, int age)
+        public Person(string ssn, string name, string address, int age)
         {
             SSN = ssn;
             Name = name;
