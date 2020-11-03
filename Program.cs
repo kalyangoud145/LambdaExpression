@@ -16,6 +16,7 @@ namespace LambdaExpression
             List<Person> listPersonInCity = new List<Person>();
             AddPersonInfo(listPersonInCity);
             Retrieving_TopTwoRecord_Where_AgeLessThanSixty(listPersonInCity);
+            Checking_TeenAge_Person(listPersonInCity);
         }
         /// <summary>
         /// Adds the person information to list
@@ -29,6 +30,7 @@ namespace LambdaExpression
             listPersonInCity.Add(new Person("789", "ted", "wng", 70));
             listPersonInCity.Add(new Person("760", "tony", "wngl", 55));
             listPersonInCity.Add(new Person("729", "tillu", "khz", 95));
+            listPersonInCity.Add(new Person("729", "mad", "europe", 16));
         }
         /// <summary>
         /// Retrievings the top two record where age of person less than sixty.
@@ -38,7 +40,23 @@ namespace LambdaExpression
         {
             foreach (Person person in listPersonInCity.FindAll(e => (e.Age < 60)).Take(2).ToList())
             {
-                Console.WriteLine("Name: "+person.Name+" Age: "+person.Age);
+                Console.WriteLine("Name: " + person.Name + " Age: " + person.Age);
+            }
+        }
+        /// <summary>
+        /// Checkings the teenage person in the list 
+        /// </summary>
+        /// <param name="listPersonInCity">The list person in city.</param>
+        public static void Checking_TeenAge_Person(List<Person> listPersonInCity)
+        {
+
+            if (listPersonInCity.Any(e => e.Age >= 13 && e.Age <= 19))
+            {
+                Console.WriteLine("A Teenager found");
+            }
+            else
+            {
+                Console.WriteLine("No teenager found");
             }
         }
     }
