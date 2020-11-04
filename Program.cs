@@ -18,6 +18,7 @@ namespace LambdaExpression
             Retrieving_TopTwoRecord_Where_AgeLessThanSixty(listPersonInCity);
             Checking_TeenAge_Person(listPersonInCity);
             Retrive_Average_Age(listPersonInCity);
+            Retrive_Persons_Whose_Age_Greater_Sixty(listPersonInCity);
         }
         /// <summary>
         /// Adds the person information to list
@@ -74,6 +75,17 @@ namespace LambdaExpression
                
             }
             Console.WriteLine("Average of ages is: " +age / listPersonInCity.Count);
+        }
+        /// <summary>
+        /// Method gets the person whose age is greater than 60
+        /// </summary>
+        /// <param name="listPersonInCity"></param>
+        public static void Retrive_Persons_Whose_Age_Greater_Sixty(List<Person> listPersonInCity)
+        {
+            foreach (Person person in listPersonInCity.FindAll(e => (e.Age > 60)).ToList())
+            {
+                Console.WriteLine("The persons whose age greater than 60: "+person.Name +" "+person.Age);
+            }
         }
     }
 }
